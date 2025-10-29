@@ -22,7 +22,7 @@ if uploaded_excel and uploaded_template:
             open(template_path, "wb").write(uploaded_template.read())
 
             # Read Excel
-            df = pd.read_excel(excel_path)
+            df = pd.read_excel(excel_path, engine="openpyxl")
 
             output_docs = os.path.join(td, "docs")
             output_pdfs = os.path.join(td, "pdfs")
